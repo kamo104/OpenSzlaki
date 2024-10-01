@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">OpenSzlaki</string>
+    <string name="title_activity_trail_add">TrailAddActivity</string>
+</resources>
