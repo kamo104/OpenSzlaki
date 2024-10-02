@@ -91,12 +91,12 @@ fun Stopper(dao: TrailDao, trail: Trail) {
     fun timerStop() {
         timerPause()
         if (currentDuration>0)
-        scope.launch {
-            trail.measurements.add(Measurement(startDate.value, Duration.ofMillis(currentDuration)))
-            dao.updateTrail(trail)
-            currentDuration = 0L
-            startDate.value = Date.from(Instant.now())
-        }
+            scope.launch {
+                trail.measurements.add(Measurement(startDate.value, Duration.ofMillis(currentDuration)))
+                dao.updateTrail(trail)
+                currentDuration = 0L
+                startDate.value = Date.from(Instant.now())
+            }
     }
 
     if (isStarted && job == null) coroutineLaunch()

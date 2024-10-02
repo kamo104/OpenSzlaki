@@ -17,7 +17,7 @@ data class Trail(
     @PrimaryKey(autoGenerate = true) var uid: Int = 0,
     @ColumnInfo(name = "name") var name: String,
     @ColumnInfo(name = "description") var description: String,
-    @ColumnInfo(name = "imagePaths") var imagePaths: MutableList<Uri>, // paths
+    @ColumnInfo(name = "imagePaths") var imagePaths: MutableList<Uri>,
     @ColumnInfo(name = "measurements") var measurements: MutableList<Measurement>
 ) {
     override fun equals(other: Any?): Boolean {

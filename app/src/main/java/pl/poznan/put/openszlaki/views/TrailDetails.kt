@@ -130,7 +130,7 @@ fun TrailDetails(dao: TrailDao, trailIn: Trail, drawerState: DrawerState) {
         Log.d("Photo taken?", "$succ")
         if(!succ) return@rememberLauncherForActivityResult
         trail.value.imagePaths.add(tmpPhotoUri)
-        trail.value = trail.value.copy() // dirty trick to force recomposition
+        trail.value = trail.value.copy()
         showConfirm.value = true;
     }
 
@@ -238,7 +238,6 @@ fun TrailDetails(dao: TrailDao, trailIn: Trail, drawerState: DrawerState) {
                                 .fillMaxWidth()
                                 .wrapContentHeight()
                                 .pin()
-//                                .road(Alignment.TopStart, Alignment.BottomStart)
                                 .background(MaterialTheme.colorScheme.onBackground.copy(alpha = 0.5F))
                         ){
                             Column (modifier = Modifier.align(Alignment.CenterVertically)){

@@ -47,7 +47,8 @@ import pl.poznan.put.openszlaki.data.trailSaver
 @Composable
 fun NewTrail(dao: TrailDao, navController: NavHostController, drawerState: DrawerState) {
     val scope = rememberCoroutineScope()
-    val trail = rememberSaveable(saver = trailSaver) { Trail(name="", description = "", imagePaths = mutableListOf(), measurements = mutableListOf()) }
+    val trail = rememberSaveable(saver = trailSaver) { Trail(
+        name="", description = "", imagePaths = mutableListOf(), measurements = mutableListOf()) }
     var trailName by remember { mutableStateOf("") }
     var isValidName by remember { mutableStateOf(true) }
     Scaffold(
